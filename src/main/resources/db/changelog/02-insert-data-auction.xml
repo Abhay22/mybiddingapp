@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="02" author="Abhay">
+        <comment>Inserting Auctions</comment>
+        <insert tableName="auction">
+            <column name="itemCode" value="Auction111"/>
+            <column name="basePrice" valueNumeric="1000"/>
+            <column name="bidPrice" valueNumeric="0"/>
+            <column name="stepRate" valueNumeric="100"/>
+            <column name="status" value="RUNNING"/>
+            
+        </insert>
+        <insert tableName="auction">
+            <column name="itemCode" value="Auction222"/>
+            <column name="basePrice" valueNumeric="2000"/>
+            <column name="bidPrice" valueNumeric="0"/>
+            <column name="stepRate" valueNumeric="100"/>
+            <column name="status" value="RUNNING"/>
+            
+        </insert>
+        <insert tableName="auction">
+            <column name="itemCode" value="Auction333"/>
+            <column name="basePrice" valueNumeric="3000"/>
+            <column name="bidPrice" valueNumeric="0"/>
+            <column name="stepRate" valueNumeric="100"/>
+            <column name="status" value="RUNNING"/>
+            
+        </insert>
+        <insert tableName="auction">
+            <column name="itemCode" value="Auction444"/>
+            <column name="basePrice" valueNumeric="4000"/>
+            <column name="bidPrice" valueNumeric="0"/>
+            <column name="stepRate" valueNumeric="100"/>
+            <column name="status" value="RUNNING"/>
+            
+        </insert>
+        <insert tableName="auction">
+            <column name="itemCode" value="Auction555"/>
+            <column name="basePrice" valueNumeric="5000"/>
+            <column name="bidPrice" valueNumeric="0"/>
+            <column name="stepRate" valueNumeric="100"/>
+            <column name="status" value="RUNNING"/>
+            
+        </insert>
+        <insert tableName="auction">
+            <column name="itemCode" value="Auction666"/>
+            <column name="basePrice" valueNumeric="6000"/>
+            <column name="bidPrice" valueNumeric="0"/>
+            <column name="stepRate" valueNumeric="100"/>
+            <column name="status" value="RUNNING"/>
+            
+        </insert>
+        <insert tableName="auction">
+            <column name="itemCode" value="Auction777"/>
+            <column name="basePrice" valueNumeric="7000"/>
+            <column name="bidPrice" valueNumeric="0"/>
+            <column name="stepRate" valueNumeric="100"/>
+            <column name="status" value="RUNNING"/>
+            
+        </insert>
+
+    </changeSet>
+</databaseChangeLog>
