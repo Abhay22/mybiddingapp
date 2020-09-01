@@ -1,1 +1,1 @@
-# mybiddingapp
+# MyBiddingApp
