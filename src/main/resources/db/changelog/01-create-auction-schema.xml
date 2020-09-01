@@ -31,6 +31,16 @@
             </column>
         </createTable>
 
+        <createTable tableName="biddingData"
+                     remarks="This table to contain all the bid information">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints nullable="false"/>
+            </column>
+            <column name="itemId" type="int">  </column>
+            <column name="userName" type="varchar(255)">  </column>
+            <column name="bidPrice" type="int">  </column>
+
+        </createTable>
     </changeSet>
 
 </databaseChangeLog>

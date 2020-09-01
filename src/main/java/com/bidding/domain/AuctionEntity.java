@@ -1,5 +1,7 @@
 package com.bidding.domain;
 
+import com.bidding.dto.AuctionResponseDTO;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
