@@ -33,4 +33,42 @@
  * Place bid API 
     * http://localhost:8080/placeBid       [authentication enabled]
     
+#
 
+    
+ #### How to fetch all "Auctions" (Based upon page size)
+
+   1. GET URL: http://localhost:8080/auction?status=RUNNING&pageNo=0&pageSize=4
+   
+   <img src="https://github.com/Abhay22/mybiddingapp/blob/master/image/auction.png" alt="drawing" width="1000" height="300"/> 
+     
+#
+
+  #### How to place a bid
+  
+   1. * Generate a bearer token to call API
+          Post URL: http://localhost:8080/user?user=abhay&password=pass
+          
+         <img src="https://github.com/Abhay22/mybiddingapp/blob/master/image/GetBearerToken.png" alt="drawing" width="1000" height="300"/> 
+          
+   2. post the bid request
+       POST URL: https://github.com/Abhay22/mybiddingapp/blob/master/image/placebit.png
+
+        * Header
+           * Content-Type : application/json
+        * Authorization
+           * Type  - Bearer Token
+           * Token - `Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJBdWN0aW9uQXBwIiwic3ViIjoiYWJoYXkiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwidXNlcm5hbWUiOiJhYmhheSIsImlhdCI6MTU5OTE0ODU1NiwiZXhwIjoxNTk5MTQ5MTU2fQ.WvfqTe_6AokNBv4C-hNEmw2yCud3SkWisq12-Ntvmr6Ix8FkMHwhPyBXTPe69_yE6iLsgStKSAF3AP1es2Yp4w`
+        
+        * Body part
+          ```
+               {
+
+               "itemCode": "Auction111",
+               "bidAmount": "1200"
+
+               }
+
+         <img src="https://github.com/Abhay22/mybiddingapp/blob/master/image/placebit.png" alt="drawing" width="1000" height="300"/> 
+          
+          
