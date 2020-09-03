@@ -21,14 +21,16 @@ import org.modelmapper.ModelMapper;
  */
 @Service
 public class AuctionService {
-    @Autowired
-    AuctionRepository auctionRepository;
 
-    @Autowired
-    ProcessBid processBid;
+    private final AuctionRepository auctionRepository;
+    private final ProcessBid processBid;
+    private final StepRule stepRule;
 
-    @Autowired
-    StepRule stepRule;
+    public AuctionService(AuctionRepository auctionRepository, ProcessBid processBid, StepRule stepRule) {
+        this.auctionRepository = auctionRepository;
+        this.processBid = processBid;
+        this.stepRule = stepRule;
+    }
 
     public List<AuctionResponseDTO> getAllAuctions(String status,Integer pageNo, Integer pageSize){
         Pageable paging = PageRequest.of(pageNo, pageSize);

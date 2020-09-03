@@ -13,9 +13,9 @@ public class StepRuleImpl implements StepRule{
     public boolean processStepRule(AuctionEntity auctionEntity, BiddingRequest biddingRequest) {
 
         if(auctionEntity.getBidPrice() == 0){
-            return biddingRequest.getBidAmount() > auctionEntity.getBasePrice()+auctionEntity.getStepRate();
+            return biddingRequest.getBidAmount() >= auctionEntity.getBasePrice()+auctionEntity.getStepRate();
         }
-        return biddingRequest.getBidAmount() > auctionEntity.getBidPrice()+auctionEntity.getStepRate();
+        return biddingRequest.getBidAmount() >= auctionEntity.getBidPrice()+auctionEntity.getStepRate();
 
     }
 }

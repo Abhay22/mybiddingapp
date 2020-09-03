@@ -22,15 +22,12 @@ import java.util.List;
 @RestController
 public class Controller {
 
-    @Autowired
-    AuctionService auctionService;
+    private final AuctionService auctionService;
+   private final  TokenGeneration tokenGeneration;
 
-    @Autowired
-    TokenGeneration tokenGeneration;
-
-    @GetMapping("/test")
-    public String test() {
-        return "Test Successful!!";
+    public Controller(AuctionService auctionService, TokenGeneration tokenGeneration) {
+        this.auctionService = auctionService;
+        this.tokenGeneration = tokenGeneration;
     }
 
     @GetMapping("/auction")

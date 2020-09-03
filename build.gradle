@@ -2,6 +2,7 @@ plugins {
 	id 'org.springframework.boot' version '2.3.3.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
 	id 'java'
+	id 'groovy'
 }
 
 group = 'com.bidding'
@@ -21,17 +22,25 @@ dependencies {
 	compile group: 'io.jsonwebtoken', name: 'jjwt', version: '0.9.1'
 	compile group: 'org.modelmapper', name: 'modelmapper', version: '2.3.8'
 
-
+	testImplementation("org.codehaus.groovy:groovy-all:2.4.12")
+	testImplementation("org.spockframework:spock-spring:1.1-groovy-2.4-rc-4")
+	testImplementation("org.spockframework:spock-core:1.1-groovy-2.4-rc-4")
+	testCompile("cglib:cglib:3.2.5")
+	testCompile("net.bytebuddy:byte-buddy:1.9.13")
+	testCompile("net.bytebuddy:byte-buddy-agent:1.9.13")
 
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
-	testCompile group: 'org.spockframework', name: 'spock-core', version: '2.0-M2-groovy-3.0'
-	testCompile group: 'org.spockframework', name: 'spock-spring', version: '2.0-M2-groovy-3.0'
-
 
 }
 
-test {
-	useJUnitPlatform()
+sourceSets {
+	main {
+		java.srcDirs += "src/main/java"
+	}
+	test {
+		groovy.srcDirs += ["src/test/groovy"]
+		resources.srcDir "src/test/resources"
+	}
 }
