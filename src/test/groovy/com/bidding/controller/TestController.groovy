@@ -33,9 +33,9 @@ class TestController extends Specification{
         auctionResponseDTO.setStatus("RUNNING")
         List<AuctionResponseDTO> allAuctions= new ArrayList<>()
         allAuctions.add(auctionResponseDTO)
-        when(auctionService.getAllAuctions("RUNNING")).thenReturn(allAuctions)
+        when(auctionService.getAllAuctions("RUNNING",0,2)).thenReturn(allAuctions)
         when:
-        def resp = controller.getAcutions("RUNNING")
+        def resp = controller.getActions("RUNNING",0,2)
         then:
         resp.statusCodeValue == 200
     }
