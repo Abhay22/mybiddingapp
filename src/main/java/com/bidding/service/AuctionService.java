@@ -7,6 +7,8 @@ import com.bidding.repository.AuctionRepository;
 import com.bidding.rules.StepRule;
 import com.bidding.util.BidStatus;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -28,9 +30,10 @@ public class AuctionService {
     @Autowired
     StepRule stepRule;
 
-    public List<AuctionResponseDTO> getAllAuctions(String status){
+    public List<AuctionResponseDTO> getAllAuctions(String status,Integer pageNo, Integer pageSize){
+        Pageable paging = PageRequest.of(pageNo, pageSize);
         List<AuctionEntity> auctionEntities = new ArrayList<>();
-        auctionRepository.findAll().forEach(auctionEntity -> {
+        auctionRepository.findAll(paging).forEach(auctionEntity -> {
             if(auctionEntity.getStatus().equalsIgnoreCase(status))
                 auctionEntities.add(auctionEntity) ;
         });

@@ -34,9 +34,11 @@ public class Controller {
     }
 
     @GetMapping("/auction")
-    public ResponseEntity getActions(@RequestParam(value = "status", required = false) String status) {
+    public ResponseEntity getActions(@RequestParam(value = "status", required = false) String status,
+                                     @RequestParam(defaultValue = "0") Integer pageNo,
+                                     @RequestParam(defaultValue = "2") Integer pageSize) {
         List<AuctionResponseDTO> allAuctions = auctionService.getAllAuctions(
-                (status == null ? AuctionStatus.RUNNING : status).toString());
+                (status == null ? AuctionStatus.RUNNING : status).toString(),pageNo, pageSize);
         return new ResponseEntity(allAuctions, new HttpHeaders(), HttpStatus.OK);
     }
 
